@@ -3,7 +3,7 @@ import random
 import requests, json
 
 app = Flask(  # Create a flask app
-    __name__,
+    _name_,
     template_folder='templates',  # Name of html file folder
     static_folder='static'  # Name of directory for static files
 )
@@ -25,7 +25,7 @@ posts = {
 
 @app.route('/')  # '/' for the default page
 def home():
-    return render_template('index.html', image_link=image_link, user_bio=user_bio,posts =postss)
+    return render_template('index.html',Image_link=image_link,User_bio=user_bio,Posts=posts)
 
 
 @app.route('/about')  # '/' for the default page
@@ -33,5 +33,5 @@ def about():
     return render_template('about.html')
 
 
-if __name__ == "__main__":  # Makes sure this is the main process
+if _name_ == "_main_":  # Makes sure this is the main process
     app.run(debug=True)
